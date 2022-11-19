@@ -1,0 +1,31 @@
+## 치킨 쿠폰
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120884?language=javascript
+
+function solution(chicken) {
+    // ex)
+    // 1) nowChicken = 1081 => service = 108, left = 1 ... coupon = 109
+    // 2) nowChicken = 109 => service = 10, left = 9 ... coupon = 19
+    // 3) nowChicken = 19 => service = 1, left = 9 ... coupon = 10
+    // 4) nowChicken = 10 => service = 1, left = 0 ... coupon = 1
+    // 5) serviceSum = 108 + 10 + 1 + 1 = 120;
+    
+    // 서비스로 받은 치킨 총량
+    let serviceSum = 0;
+    let service;
+    let nowChicken = chicken;
+    // 나머지
+    let left;
+    let coupon;
+    
+    // 쿠폰으로 서비스 치킨을 시킬 수 없을 때까지 반복
+    // => coupon의 갯수가 10미만이면 
+    do {
+        service = Math.floor(nowChicken / 10);
+        left = nowChicken % 10;
+        serviceSum += service;
+        coupon = service + left;
+        nowChicken = coupon;
+    } while(coupon >= 10)
+        
+    return serviceSum;
+}
