@@ -1,0 +1,22 @@
+## 중복된 문자 제거
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120888
+
+function solution(my_string) {
+    let answer = ""
+    let index = 0;
+    
+    // my_string 전체 문자를 순회하면 while문 종료
+    do {
+        // 현재 문자
+        let now = my_string[index];
+        // answer에 현재 문자(now)가 존재하지 않으면
+        // 문자열 answer에 현재 문자를 뒤에 붙인다
+        if (answer.indexOf(now) === -1) {
+            answer = answer + now;
+        }
+        // index 1 증가
+        index++;
+    } while (index < my_string.length)
+        
+    return answer;
+}
