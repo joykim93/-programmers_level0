@@ -1,0 +1,17 @@
+## 분수의 덧셈
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120808
+
+function solution(denum1, num1, denum2, num2) {
+    // a, b의 최대공약수 구하는 함수
+    const gcd = (a, b) => a % b === 0 ? b : gcd(b, a % b);
+    // a, b의 최소공배수 구하는 함수
+    const lcm = (a, b) => a * b / gcd(a, b);
+    // num1, num2의 최소공배수 
+    const LCM = lcm(Math.max(num1, num2), Math.min(num1, num2));
+    // 두 분수의 분자 총합
+    const sumDenum = (denum1 * (LCM / num1)) + (denum2 * (LCM / num2));
+    // 최소공배수와 분자 총합 사이의 최대공약수
+    const GCD = gcd(Math.max(LCM, sumDenum), Math.min(LCM, sumDenum));
+    // 약분해서 반환
+    return [sumDenum / GCD, LCM / GCD];
+}
