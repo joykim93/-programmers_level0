@@ -1,0 +1,18 @@
+## 양꼬치
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120830
+
+function solution(n, k) {
+    // 양꼬치 10인분 => 음료수 1개 서비스
+    // 양꼬치 1인분 12,000원
+    // 음료수 1개 2,000원
+    
+    // ex) n = 10, k = 3
+    // 10 * 12,000 = 120,000
+    // 2 * 2,000 = 4000
+    // 124,000
+    
+    let service = Math.floor(n / 10);
+    k = k - service;
+    
+    return (n * 12000) + (k * 2000);
+}
