@@ -1,0 +1,33 @@
+## 연속된 수의 합
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120923?language=javascript
+
+function solution(num, total) {
+    // 연속된 수를 더했을 때 가장 큰 수 (possibility)
+    let max = Math.floor(total / 2) + 1;
+    let answer = [];
+    
+    // 제한사항에서 항상 문제의 답이 있으므로 
+    // 답을 찾을 때까지 while문 실행
+    while (true) {
+        let sum = 0;
+        // 가장 큰 수부터 1씩 빼가며 연속된 수를 만들고
+        // 그 수들의 합을 계산
+        for(let i = max; i > max - num; i--) {
+            sum = sum + i;
+            answer.unshift(i);
+        }
+        // 만약 합과 total이 같으면 배열 return 
+        if (sum === total) {
+            return answer;
+        }
+        // 만약 합과 total이 같지 않으면
+        // 배열 answer 초기화
+        // sum과 total의 차이를 num 나눈 값을 내림처리한 후
+        // 현재 for문 시작 값 업데이트 (최대값 재정의)
+        else {
+            answer = []
+            let diff = Math.floor((sum - total) / num)
+            max = max - diff;
+        }
+    }   
+}
