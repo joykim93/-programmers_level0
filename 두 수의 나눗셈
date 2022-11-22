@@ -1,0 +1,6 @@
+## 두 수의 나눗셈
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120806
+
+function solution(num1, num2) {
+    return Math.floor(1000 * (num1 / num2));
+}
