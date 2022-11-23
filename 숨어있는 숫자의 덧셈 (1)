@@ -1,0 +1,8 @@
+## 숨어있는 숫자의 덧셈 (1)
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120851
+
+function solution(my_string) {
+    return my_string.split("").reduce((acc, cur) => {
+        return isNaN(Number(cur)) === false ? Number(acc) + Number(cur) : Number(acc);
+    }, 0);
+}
