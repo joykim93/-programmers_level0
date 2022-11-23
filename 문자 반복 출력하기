@@ -1,0 +1,10 @@
+## 문자 반복 출력하기
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120825
+
+function solution(my_string, n) {
+    // 1. split해서 배열로 만든다
+    // 2. map으로 요소 하나씩 접근
+    // 3. repeat으로 해당 요소를 n번 반복한 문자열로 만든다
+    // 4. join으로 다시 배열을 문자열로 합친다
+    return my_string.split("").map((el) => el.repeat(n)).join("");
+}
