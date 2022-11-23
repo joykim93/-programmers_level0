@@ -1,0 +1,7 @@
+## 모음 제거
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120849
+
+function solution(my_string) {
+    const list = ['a', 'e', 'i', 'o', 'u'];
+    return my_string.split("").filter((el) => !list.includes(el)).join("");
+}
