@@ -1,0 +1,7 @@
+## 숫자 찾기
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120904
+
+function solution(num, k) {
+    let index = num.toString().split("").indexOf(k.toString());
+    return index === -1 ? -1 : index + 1;
+}
