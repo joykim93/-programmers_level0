@@ -1,0 +1,15 @@
+## 배열 회전시키기
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120844
+
+function solution(numbers, direction) {
+    // 오른쪽인 경우
+    if (direction === "right") {
+        let tail = numbers.pop();
+        return [tail, ...numbers];
+    }
+    // 왼쪽인 경우
+    else {
+        let head = numbers.shift();
+        return [...numbers, head];
+    }
+}
