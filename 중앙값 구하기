@@ -1,0 +1,7 @@
+## 중앙값 구하기
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120811
+
+function solution(array) {
+    array.sort((a, b) => a - b);
+    return array[Math.floor(array.length / 2)];
+}
