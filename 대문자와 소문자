@@ -1,0 +1,13 @@
+## 대문자와 소문자
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120893
+
+function solution(my_string) {
+    return my_string.split("").map((el) => {
+        // 대문자의 경우 소문자로 변환
+        if (el === el.toUpperCase()) {
+            return el.toLowerCase();
+        }
+        // 소문자의 경우 대문자로 변환
+        else return el.toUpperCase();
+    }).join("");
+}
