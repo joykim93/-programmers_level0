@@ -1,0 +1,10 @@
+## 자릿수 더하기
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120906
+
+function solution(n) {
+    // 0인 경우 분기 처리
+    if(n === 0) return 0;
+    // n을 문자열로 변환
+    var n = n.toString();
+    return n.split("").reduce((acc, cur) => Number(acc) + Number(cur));
+}
