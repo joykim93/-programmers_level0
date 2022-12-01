@@ -1,0 +1,17 @@
+## 로그인 성공?
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120883
+
+function solution(id_pw, db) {    
+    for (let i = 0; i < db.length; i++) {
+        // 1. 아이디와 비밀번호 모두 일치하는 경우
+        if (id_pw[0] === db[i][0] && id_pw[1] === db[i][1]) {
+            return 'login';
+        } 
+        // 2. 아이디만 일치하는 경우
+        else if (id_pw[0] === db[i][0] && id_pw[1] !== db[i][1]) {
+            return 'wrong pw';
+        }
+    }
+    // 3. 아이디와 비밀번호가 일치하지 않는 경우
+    return 'fail';
+}
