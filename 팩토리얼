@@ -1,0 +1,18 @@
+## 팩토리얼
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120848
+
+function solution(n) {
+    let answer;
+    let list = [1, 2]
+    
+    while (true) {
+        let now = list[list.length - 1];
+        if (now > n) {
+            answer = list.length - 1;
+            break;
+        }
+        list.push(now * (list.length + 1));
+    }
+    
+    return answer;
+}
