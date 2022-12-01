@@ -1,0 +1,19 @@
+## 직사각형 넓이 구하기
+## 문제 url: https://school.programmers.co.kr/learn/courses/30/lessons/120860
+
+function solution(dots) {
+    let answer = [];
+    
+    const calculateLen = (a, b) => {
+        return Math.sqrt(Math.pow(a[0] - b[0], 2) + Math.pow(a[1] - b[1], 2));
+    }
+    
+    for (let i = 1; i < dots.length; i++) {
+        let len = calculateLen(dots[0], dots[i]);
+        answer.push(len);
+    }
+    
+    answer.sort((a, b) => a - b);
+    
+    return answer[0] * answer[1];
+}
